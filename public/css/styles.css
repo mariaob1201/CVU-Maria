@@ -1,63 +1,73 @@
-/* Reset some basic elements */
+/* Basic Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body Styles */
 body {
   font-family: Arial, sans-serif;
   background: #f4f4f4;
+  padding: 20px;
   color: #333;
-  line-height: 1.6;
 }
 
-/* Main container styling */
+/* Container to hold the two columns */
 .container {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 20px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-/* Left column: Image styling */
-.image {
+/* Left Column: Image */
+.left-column {
   flex: 1;
-  margin-right: 20px;
+  /* Optional: Adjust the width ratio as needed */
+  min-width: 300px;
+  overflow: hidden;
 }
 
-.image img {
+.left-column img {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Right column: Description styling */
-.description {
-  flex: 2;
+/* Right Column: Description */
+.right-column {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.description h1 {
-  font-size: 2.5rem;
+.right-column h1 {
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
-.description p {
+.right-column p {
   font-size: 1.1rem;
+  line-height: 1.6;
   margin-bottom: 15px;
 }
 
-/* Responsive styling */
+/* Responsive Styling */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
-  .image {
-    margin: 0 0 20px 0;
+  .left-column,
+  .right-column {
+    min-width: 100%;
+  }
+  .right-column {
+    padding: 20px;
   }
 }
