@@ -22,5 +22,5 @@ rad.json
 TestResults.xml
 # Local Netlify folder
 .netlify
-myenv/*
+myenv/
 .idea/
